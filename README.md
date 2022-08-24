@@ -38,4 +38,3 @@ Source code for LIFF v2 online course
 	  <th><img src="https://user-images.githubusercontent.com/1763410/75949422-cb00de00-5ed8-11ea-9e84-d737555cfcef.png" width="100%"></th>
 	</tr>
 </table>
-
