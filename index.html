@@ -78,9 +78,9 @@
         document.getElementById("os").append(liff.getOS())//ใช้ระบบปฏิบัติการอะไร
         document.getElementById("language").append(liff.getLanguage())//เครื่อง user ใช้ภาษาอะไร
         document.getElementById("version").append(liff.getVersion())//เวอร์ชั่นไลน์
-        document.getElementById("isInClient").append(liff.getisInClient())//เปิดกับแอปอะไร เช่น เว็บ หรือไลน์
+        document.getElementById("isInClient").append(liff.isInClient())//เปิดกับแอปอะไร เช่น เว็บ หรือไลน์
         document.getElementById("accessToken").append(liff.getAccessToken())//เกี่ยวกับ Tmp เอาไว้ใช้กับระบบ Security
-        if(liff.getisInClient()){
+        if(liff.isInClient()){
             document.getElementById("btnLogOut").style.display = "none"
         }else{
             document.getElementById("btnMsg").style.display = "none"
