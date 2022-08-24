@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-  <title>My LIFF app</title>
+  <title>Aimsuccess Connect</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -75,12 +75,23 @@
     }
 
     function getEnvironment() {
+        document.getElementById("os").append(liff.getOS())//ใช้ระบบปฏิบัติการอะไร
+        document.getElementById("language").append(liff.getLanguage())//เครื่อง user ใช้ภาษาอะไร
+        document.getElementById("version").append(liff.getVersion())//เวอร์ชั่นไลน์
+        document.getElementById("isInClient").append(liff.getisInClient())//เปิดกับแอปอะไร เช่น เว็บ หรือไลน์
+        document.getElementById("accessToken").append(liff.getAccessToken())//เกี่ยวกับ Tmp เอาไว้ใช้กับระบบ Security
+        if(liff.getisInClient()){
+            document.getElementById("btnLogOut").style.display = "none"
+        }else{
+            document.getElementById("btnMsg").style.display = "none"
+            document.getElementById("btnClose").style.display = "none"
+            document.getElementById("btnScanCode").style.display = "none"
+        }
     }
 
     async function main() {
-      alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
-      // getEnvironment()
+      await liff.init({ liffId: "1657412214-DldErxvW" })//ฟังก์ชั่นต่างๆ ของไลน์จะทำงานได้ก็ต่อเมื่อมีบรรทัดนี้
+      getEnvironment()
       // getUserProfile()
       // getContext()
       // getFriendship()
