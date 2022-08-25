@@ -126,7 +126,7 @@
 
     async function main() {
       await liff.init({ liffId: "1657412214-DldErxvW" })//ฟังก์ชั่นต่างๆ ของไลน์จะทำงานได้ก็ต่อเมื่อมีบรรทัดนี้
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn)
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if(liff.isLoggedIn()){
       getEnvironment()
       getUserProfile()
