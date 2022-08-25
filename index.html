@@ -62,12 +62,19 @@
     function openWindow() {
     }
 
-    async function getFriendship() {
+    async function getFriendship() {//ฟังก์ชั่นนี้เอาไว้เช็คว่า user เป็นเพื่อนกับ บอตหรือยัง
+        const friend = await liff.getFriendship()
+        document.getElementById("friendship").append(friend.friendFlag)
+        if (!friend.friendFlag) {
+            if (confirm("คุณยังไม่ได้เป็นเพื่อนกับเรา เพิ่มเลยหรือไม่?")){
+                window.location = "https://linevoom.line.me/user/_daa-YNUW2VbFAa6NhfXd7a7iuwbYph7nhtkU_mU"
+            }
+        }
     }
 
     async function sendMsg() {
         if(liff.getContext().type !== "none"){//จะส่งข้อความได้ก็ต่อเมื่อ type ไม่เป็น none คือ ไม่ได้คุยเลย ฮ่าๆๆๆ
-            await liff.sendMessages([
+            await liff.sendMessages([//คิดว่าในช่วงนี้สามารถดึงรายงานมาแสดงได้นะ ลองศึกษาเพิ่มเติม
                 {
                     "type":"sticker",
                     "stickerId":1,
@@ -115,7 +122,7 @@
       getEnvironment()
       getUserProfile()
       getContext() //ตรงนี้จะดึงบริบทมาว่า User เข้ามาใน liff เพื่ออะไร เข้าจากส่วนตัว จากกลุ่ม อะไรประมาณนี้นะ น่าจะเอามาใช้เพื่อกำหนดคำสั่งให้เมนูได้นะ
-      // getFriendship()
+      getFriendship()//เช็คว่า user เป็นเพื่อนกับแชตบอตหรือยัง ไม่ใช่ส่งมั่วๆ ไง เช็คนิดนึง
       // createUniversalLink()
     }
     main()
