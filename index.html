@@ -72,7 +72,7 @@
     }
 
     async function getUserProfile() {//ใช้ async และ await เพราะข้อมูลที่ขอเป็น Promise ประมาณต้องขอข้อมูลจากผู้ใช้อ่ะนะ
-        const profile = await liff.getprofile()
+        const profile = await liff.getProfile()
         document.getElementById("pictureUrl").src = profile.pictureUrl// ใช้ src เพราะรูปภาพเป็นลิ้งค์ ดังนั้นต้องไปดึงลิ้งค์ url มา
         document.getElementById("userId").append(profile.userId)
         document.getElementById("displayName").append(profile.displayName)
@@ -97,7 +97,7 @@
     async function main() {
       await liff.init({ liffId: "1657412214-DldErxvW" })//ฟังก์ชั่นต่างๆ ของไลน์จะทำงานได้ก็ต่อเมื่อมีบรรทัดนี้
       getEnvironment()
-      // getUserProfile()
+      getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
