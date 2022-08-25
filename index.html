@@ -126,14 +126,14 @@
 
     async function main() {
       await liff.init({ liffId: "1657412214-DldErxvW" })//ฟังก์ชั่นต่างๆ ของไลน์จะทำงานได้ก็ต่อเมื่อมีบรรทัดนี้
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())//คำสั่งนี้ป้องกันกรณี user ไม่ได้ล็อคอิน ก็จะไม่สามารถดูอะไรได้เลย
       if(liff.isLoggedIn()){
       getEnvironment()
       getUserProfile()
       getContext() //ตรงนี้จะดึงบริบทมาว่า User เข้ามาใน liff เพื่ออะไร เข้าจากส่วนตัว จากกลุ่ม อะไรประมาณนี้นะ น่าจะเอามาใช้เพื่อกำหนดคำสั่งให้เมนูได้นะ
       getFriendship()//เช็คว่า user เป็นเพื่อนกับแชตบอตหรือยัง ไม่ใช่ส่งมั่วๆ ไง เช็คนิดนึง
       // createUniversalLink()
-  }
+  } else{alert("กรุณาเข้าสู่ระบบไลน์ก่อนใช้งาน")}
     }
     main()
   </script>
