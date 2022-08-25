@@ -77,8 +77,8 @@
         document.getElementById("pictureUrl").src = profile.pictureUrl// ใช้ src เพราะรูปภาพเป็นลิ้งค์ ดังนั้นต้องไปดึงลิ้งค์ url มา
         document.getElementById("userId").append(profile.userId)
         document.getElementById("displayName").append(profile.displayName)
-        document.getEleMentById("statusMessage").append(profile.statusMessage)
-        document.getEleMentById("decodedIDToken").append(liff.getDecordedIDToken().email)
+        document.getElementById("statusMessage").append(profile.statusMessage)
+        document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
 
     function getEnvironment() {
