@@ -71,7 +71,12 @@
     function getContext() {
     }
 
-    async function getUserProfile() {
+    async function getUserProfile() {//ใช้ async และ await เพราะข้อมูลที่ขอเป็น Promise ประมาณต้องขอข้อมูลจากผู้ใช้อ่ะนะ
+        const profile = await liff.getprofile()
+        document.getElementById("pictureUrl").src = profile.pictureUrl// ใช้ src เพราะรูปภาพเป็นลิ้งค์ ดังนั้นต้องไปดึงลิ้งค์ url มา
+        document.getElementById("userId").append(profile.userId)
+        document.getElementById("displayName").append(profile.displayName)
+        document.getEleMentById("statusMessage").append(profile.statusMessage)
     }
 
     function getEnvironment() {
