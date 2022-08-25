@@ -66,12 +66,21 @@
     }
 
     async function sendMsg() {
+        if(liff.getContext().type !== "none"){//จะส่งข้อความได้ก็ต่อเมื่อ type ไม่เป็น none คือ ไม่ได้คุยเลย ฮ่าๆๆๆ
+            await liff.getMassages([
+                {
+                    "type":"sticker",
+                    "stickerId":1,
+                    "packageId":1
+                }
+            ])
+        }
     }
 
     function getContext() {
-        document.getElementById("type").append(liff.getContext().type)
-        document.getElementById("viewType").append(liff.getContext().viewType)
-        document.getElementById("utouId").append(liff.getContext().utouId)
+        document.getElementById("type").append(liff.getContext().type)//utou group or room
+        document.getElementById("viewType").append(liff.getContext().viewType)//แสดงหน้าจอ 3 แบบ เช่น tall
+        document.getElementById("utouId").append(liff.getContext().utouId) //ไอดีที่เข้า
         document.getElementById("roomId").append(liff.getContext().roomId)
         document.getElementById("groupId").append(liff.getContext().groupId)
     }
