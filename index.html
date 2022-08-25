@@ -69,11 +69,11 @@
     }
 
     function getContext() {
-        document.getElementByID("type").append(liff.getContext().type)
-        document.getElementByID("viewType").append(liff.getContext().viewType)
-        document.getElementByID("utouId").append(liff.getContext().utouId)
-        document.getElementByID("roomId").append(liff.getContext().roomId)
-        document.getElementByID("groupId").append(liff.getContext().groupId)
+        document.getElementById("type").append(liff.getContext().type)
+        document.getElementById("viewType").append(liff.getContext().viewType)
+        document.getElementById("utouId").append(liff.getContext().utouId)
+        document.getElementById("roomId").append(liff.getContext().roomId)
+        document.getElementById("groupId").append(liff.getContext().groupId)
     }
 
     async function getUserProfile() {//ใช้ async และ await เพราะข้อมูลที่ขอเป็น Promise ประมาณต้องขอข้อมูลจากผู้ใช้อ่ะนะ
