@@ -48,6 +48,10 @@
     }
 
     async function shareMsg() {
+        await liff.shareTargetPicker([{
+                "type" : "text",
+                "text" : "Ok Every body"
+        }])
     }
 
     function logOut() {
@@ -133,7 +137,7 @@
       getContext() //ตรงนี้จะดึงบริบทมาว่า User เข้ามาใน liff เพื่ออะไร เข้าจากส่วนตัว จากกลุ่ม อะไรประมาณนี้นะ น่าจะเอามาใช้เพื่อกำหนดคำสั่งให้เมนูได้นะ
       getFriendship()//เช็คว่า user เป็นเพื่อนกับแชตบอตหรือยัง ไม่ใช่ส่งมั่วๆ ไง เช็คนิดนึง
       // createUniversalLink()
-  } else{liff.login()}
+  } else{liff.login()}//ถ้ายังไม่ login ก็ให้แสดงหน้าจอล็อคอินขึ้นมาเลยนะจร่ะ
     }
     main()
   </script>
